@@ -82,10 +82,11 @@ rule all:
 
 rule bcftools_query:
     params:
-        vcf = lambda wc: samples[wc.sample].vcf_path
+        vcf = lambda wc: samples[wc.sample].vcf_path,
+        chrom = "{sample}"
     output:
         out = "{out_dir}/gnomad_ref_{sample}.tsv"
     shell:
-        "bash bcftools_query.sh -v {params.vcf} -o {output.out}"
+        "bash bcftools_query.sh -v {params.vcf} -o {output.out} -c {params.chrom}"
 
 
