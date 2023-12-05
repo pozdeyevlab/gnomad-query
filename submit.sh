@@ -12,6 +12,7 @@ cd /projects/swhite3@xsede.org/gnomad-query
 module load anaconda
 module load bcftools
 conda activate gnomad_query
+poetry install
 
 snakemake --cores $nproc --configfile config.yaml
 
