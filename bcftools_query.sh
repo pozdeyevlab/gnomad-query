@@ -32,7 +32,7 @@ while getopts ":v:o:c:" opt; do
 done
 
 # Download vcf from gnomAD
-temp_path='/pl/active/pozdeyevlab/GBMI/GWAS/GWAS/QC_HARMONIZE/GNOMAD_AF'
+temp_path='/pl/active/pozdeyevlab/GBMI/GWAS/GWAS/QC_HARMONIZE/GNOMAD_REF'
 gsutil cp $vcf $temp_path/$chrom.vcf.gz
 
 # Query vcf
