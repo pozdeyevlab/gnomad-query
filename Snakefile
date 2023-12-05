@@ -7,13 +7,6 @@ from typing import Tuple
 import os
 
 ################################################################################
-# TODO: 
-# Improve output dir structure
-# Add defaults for threads
-# Add clear documentatins about SM and ID
-################################################################################
-
-################################################################################
 # Code to parse the sample sheet and find input files
 ################################################################################
 
@@ -84,14 +77,14 @@ rule all:
     that the pipeline will generate by default if a specific list isn't provided.
     """
     input:
-        [f"{out_dir}/AF_{sample}.tsv" for sample in samples]
+        [f"{out_dir}/gnomad_ref_{sample}.tsv" for sample in samples]
 
 
 rule bcftools_query:
     params:
         vcf = lambda wc: samples[wc.sample].vcf_path
     output:
-        out = "{out_dir}/AF_{sample}.tsv"
+        out = "{out_dir}/gnomad_ref_{sample}.tsv"
     shell:
         "bash bcftools_query.sh -v {params.vcf} -o {output.out}"
 

@@ -24,4 +24,4 @@ vcf:
   - "gs://gcp-public-data--gnomad/release/4.0/vcf/genomes/gnomad.genomes.v4.0.sites.chrX.vcf.bgz"
   - "gs://gcp-public-data--gnomad/release/4.0/vcf/genomes/gnomad.genomes.v4.0.sites.chrY.vcf.bgz"
 
-out_dir: "/pl/active/pozdeyevlab/GBMI/GWAS/GWAS/QC_HARMONIZE/GNOMAD_AF"
+out_dir: "/pl/active/pozdeyevlab/GBMI/GWAS/GWAS/QC_HARMONIZE/GNOMAD_REF"
