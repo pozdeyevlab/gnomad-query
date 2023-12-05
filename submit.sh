@@ -1,6 +1,6 @@
 #!/bin/bash
 #SBATCH --nodes=1
-#SBATCH --partition=amem
+#SBATCH --partition=amilan
 #SBATCH --ntasks=12
 #SBATCH --job-name="plots_test_test"
 #SBATCH -o "/scratch/alpine/swhite3@xsede.org/plots/plots_test.out"
