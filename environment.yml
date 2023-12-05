@@ -1,0 +1,8 @@
+name: bcftools_gnomad
+channels:
+  - bioconda
+  - conda-forge
+dependencies:
+  - snakemake=7.32.4
+  - python=3.9.1
+  - gsutil=5.27
