@@ -1,1 +1,3 @@
 .snakemake/
+test/
+scratch.py

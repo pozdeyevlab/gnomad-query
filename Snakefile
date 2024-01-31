@@ -26,8 +26,6 @@ samples: Dict[str, Sample] = dict()
 for filename in vcf:
     chrom = (filename.split(".vcf.bgz")[0]).split('.')[-1]
     samples[chrom] = Sample(chrom, filename)
-print(samples)
-
 ################################################################################
 # Directives
 ################################################################################
@@ -77,7 +75,8 @@ rule all:
     that the pipeline will generate by default if a specific list isn't provided.
     """
     input:
-        [f"{out_dir}/gnomad_ref_{sample}.tsv" for sample in samples]
+        [f"{out_dir}/gnomad_ref_{sample}.tsv" for sample in samples],
+        [f"{out_dir}/flagged_variants_{sample}.tsv" for sample in samples]
 
 
 rule bcftools_query:
@@ -88,5 +87,16 @@ rule bcftools_query:
         out = "{out_dir}/gnomad_ref_{sample}.tsv"
     shell:
         "bash bcftools_query.sh -v {params.vcf} -o {output.out} -c {params.chrom}"
+
+
+rule an_flag:
+    input:
+        gnomad_ref = "{out_dir}/gnomad_ref_{sample}.tsv"
+    output:
+        out = "{out_dir}/flagged_variants_{sample}.tsv"
+    shell:
+        "python flag.py "
+        "--gnomad-tsv {input.gnomad_ref} "
+        "--output-tsv {output.out}"
 
 
