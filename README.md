@@ -6,6 +6,7 @@ All dependencies for this workflow are included in the conda environment, except
 ```
 conda env create -f environment.yml
 conda activate gnomad_query
+poetry install
 ```
 
 # How to Use

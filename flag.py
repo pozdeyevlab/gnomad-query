@@ -4,7 +4,7 @@ Module to read in gnomad reference and flag variants that have an AN less than 5
 import csv
 import re
 from pathlib import Path
-from typing import List, Optional, Union
+from typing import List
 
 import defopt
 import polars as pl
