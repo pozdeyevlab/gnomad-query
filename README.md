@@ -12,9 +12,11 @@ poetry install
 # How to Use
 1. Build and activate the conda environment via `environment.yml`
 2. Fill in the output directory in `config.yaml` (defaults to a directory GNOMAD_REF in working directory)
-3. Run snakemake workflow via command below
+3. Run snakemake workflow via command below (adjust the number of cores to what is appropriate for your machine)
 ```
-snakemake --cores 5 --configfile config.yaml
+# View dag
+snakemake --cores 2 --configfile config.yaml --dry-run
+snakemake --cores 2 --configfile config.yaml
 ```
 
 # Outputs
