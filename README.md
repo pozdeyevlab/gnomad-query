@@ -1,5 +1,5 @@
 # gnomad-query
-A workflow to download v4 vcf's from gnomAD, parse vcf's for chrom, pos, alt, ref, all AF &amp; AN to across all available ancestries for use in aligning gwas summary files form multiple biobanks.
+A workflow to download v4 vcf's from gnomAD, parse vcf's for chrom, pos, alt, ref, all AF &amp; AN across all available ancestries for use in aligning gwas summary stats from multiple biobanks.
 
 # Quick Installation
 All dependencies for this workflow are included in the conda environment, except bcftools, which will require independent install by users.
